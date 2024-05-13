@@ -1,5 +1,5 @@
-import { Leon } from "./clases/Leon.js"; // Importa las clases de animales desde el archivo Tipos.js
-import animalesData from "./Animales.js"; // Importa el módulo de datos de animales desde el archivo Animales.js
+import {Leon, Lobo, Oso, Serpiente, Aguila} from "./Animales"; // Importa las clases de animales desde el archivo Animales.js
+import animales from "./DatosAnimales.js"; // Importa el módulo de datos de animales desde el archivo DatosAnimales.js
 
 let animales = []; // Arreglo para almacenar los objetos de animales registrados
 
@@ -9,7 +9,7 @@ const reloadTable = () => {
   animalesTemplate.innerHTML = ""; // Limpia el contenido actual de la tabla
   animales.forEach((p, i) => {
     // Itera sobre cada animal en el arreglo
-    ...
+
   });
   document
     .querySelectorAll(".card-body button")
@@ -21,11 +21,17 @@ window.playSound = (nombre) => {
   const animal = animales.find((a) => a.getNombre() == nombre); // Encuentra el objeto de animal correspondiente al nombre
   console.log(animal); // Imprime el objeto animal en la consola
   // Selecciona el método de sonido según el tipo de animal y lo reproduce
-  nombre == "Leon"
+      nombre == "Leon"
     ? animal.Rugir()
     : nombre == "Lobo"
     ? animal.Aullar()
-    : undefined;
+    : nombre == "Oso"
+    ? animal.Gruñir()
+    : nombre == "Serpiente"
+    ? animal.Sisear()
+    : nombre == "Aguila"
+    ? animal.Chillar()
+    :undefined;
 };
 
 // Función para mostrar los detalles de un animal en el modal
@@ -37,9 +43,9 @@ window.modalDetails = (i) => {
 };
 
 // Variable para almacenar la ruta de la imagen del animal seleccionado
-...
+
 // Variable para almacenar el sonido del animal seleccionado
-...
+
 
 // Evento de cambio en la selección del tipo de animal
 document.getElementById("animal").addEventListener("change", async (e) => {
@@ -54,5 +60,5 @@ document.getElementById("animal").addEventListener("change", async (e) => {
 });
 
 // Evento de clic en el botón de registro de animal
-...
-});
+
+// });
